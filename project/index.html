@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Frame Extractor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Video Frame Extractor</h1>
+      
+      <div class="upload-container">
+        <label for="video-upload" class="upload-label">
+          <div class="upload-area">
+            <div class="upload-icon">📁</div>
+            <p>Click to select or drag & drop a video file</p>
+          </div>
+        </label>
+        <input type="file" id="video-upload" accept="video/*" />
+      </div>
+      
+      <div id="video-container" class="hidden">
+        <video id="video-player" controls></video>
+        
+        <div class="controls">
+          <button id="capture-btn" class="btn">Capture Frame</button>
+          <button id="capture-multiple-btn" class="btn">Capture Multiple Frames</button>
+          <div id="multiple-frames-controls" class="hidden">
+            <div class="input-group">
+              <label for="frame-count">Number of frames:</label>
+              <input type="number" id="frame-count" min="2" max="50" value="10" />
+            </div>
+            <button id="start-multiple-capture" class="btn">Start Capture</button>
+          </div>
+        </div>
+      </div>
+      
+      <canvas id="canvas" class="hidden"></canvas>
+      
+      <div id="frames-container" class="hidden">
+        <h2>Captured Frames</h2>
+        <div id="frames-grid"></div>
+      </div>
+    </div>
+    
+    <script src="main.js"></script>
+  </body>
+</html>
